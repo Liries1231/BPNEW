@@ -18,13 +18,11 @@ public class Author {
     private Integer authorId;
     private int age;
     private String country;
-    @OneToMany(mappedBy = "author")
+    @OneToMany(mappedBy = "authorId")
     @ToString.Exclude
-    List<Book> bookAuthor;
+    private List<Book> bookAuthor;
 
-    public Author(Integer authorId) {
 
-    }
 
     @Override
     public boolean equals(Object o) {

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Book Details</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Book info</h1>
+<button onclick="goBack()">Back</button>
+<script>
+    function goBack() {
+        history.back();
+    }
+</script>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Author Details</th>
+    </tr>
+    <tr>
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.name}"></td>
+        <td th:text="${book.author}"></td>
+        <td th:text="${book.authorId}"></td>
+
+        <td><a th:href="@{/author/{id}(id=${book.authorId})}">Details</a></td>
+    </tr>
+</table>
+</body>
+</html>

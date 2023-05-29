@@ -2,6 +2,7 @@ package com.example.BookProject.controller;
 
 import com.example.BookProject.entity.Author;
 import com.example.BookProject.entity.Book;
+import com.example.BookProject.repos.AuthorRepos;
 import com.example.BookProject.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.Map;
 public class BookController {
     @Autowired
     private BookService bookRepos;
+
 
     @GetMapping("/books")
     public String book(@RequestParam(name = "name", required = false, defaultValue = "Book name") String name,
@@ -60,6 +62,7 @@ public class BookController {
         return "main";
 
     }
+
 
     @GetMapping("{id}")
     public String delete(@PathVariable("id") int id) {

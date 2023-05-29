@@ -18,4 +18,12 @@ public class AuthorService {
         return authorRepos.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Book not found with id: " + id));
     }
+    public Author createBook(Author author) {
+        return authorRepos.save(author);
+
+
+    }
+    public Iterable<Author> getAllBooks() {
+        return authorRepos.findAll();
+    }
 }

@@ -22,6 +22,7 @@ public class Book {
     @JoinColumn(name = "author_id")
     private Author authorId;
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
